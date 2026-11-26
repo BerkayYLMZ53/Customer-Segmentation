@@ -1,31 +1,52 @@
-# 💳 Credit Card Customer Segmentation with K-Means (Unsupervised Learning)
+# Credit Card Customer Segmentation with K-Means
 
-This project is an unsupervised learning study developed to analyze the financial behaviors and spending habits of credit card users, aiming to assist in guiding banking strategies by creating **customer segments (clusters)**.
+An unsupervised learning project that explores patterns in credit-card customer spending behaviour and groups customers with similar characteristics.
 
-## 🎯 Project Objective
-To identify groups exhibiting similar behaviors by examining financial metrics such as customers' spending frequency, cash advance tendencies, and credit limit utilization; thereby helping to develop personalized marketing and risk management strategies.
+## Project objective
 
-## 📊 Dataset, Preprocessing, and Dimensionality Reduction
-The **"Credit Card Dataset"**, commonly used in the machine learning community, was utilized in this study. The following preprocessing steps were applied during the data preparation phase:
-* **Missing Value Imputation:** Missing values in the dataset were filled using the `SimpleImputer` library to preserve the overall data distribution.
-* **Feature Scaling:** Since the K-Means algorithm is distance-based, all variables were standardized using `StandardScaler`.
-* **PCA (Principal Component Analysis):** Dimensionality reduction was applied to address multicollinearity issues in the high-dimensional dataset and to visualize the clusters on a 2D plane.
+The aim is to identify behavioural segments using features such as spending frequency, cash-advance activity, and credit-limit utilization. Such exploratory segments can help analysts formulate questions for further investigation; they should not be treated as definitive customer risk or creditworthiness labels.
 
-## 🛠️ Technologies and Methods Used
-* **Programming Language:** Python
-* **Libraries:** Pandas, NumPy, Matplotlib, Seaborn, Scikit-Learn
-* **Method:** K-Means Clustering & Silhouette Score Analysis
+## Dataset and preprocessing
 
-## 📈 Clustering Results and Customer Profiles
-Based on the evaluation of the Silhouette Score and the Elbow Method, the number of clusters was set to **4**. The customers were grouped into the following financial behavior segments:
-1. 🎯 **Cluster 0 (Passive Customers):** A standard segment characterized by low spending and low credit utilization.
-2. 💎 **Cluster 1 (High-Value Customers):** The segment with high spending frequency and volume, representing high profitability for the bank.
-3. ⚠️ **Cluster 2 (At-Risk Customers):** Customers with a high tendency to use their credit limits for cash advances and a higher propensity for debt/interest.
-4. 📈 **Cluster 3 (Mid-Tier Customers):** A segment with moderate spending and payment balances, representing future potential.
+The project uses a commonly available Credit Card Dataset. The workflow includes:
 
-## 🚀 Running the Project Locally
+- Handling missing values with `SimpleImputer`.
+- Standardizing features with `StandardScaler`, since K-Means is distance-based.
+- Applying Principal Component Analysis (PCA) to support dimensionality reduction and two-dimensional cluster visualization.
+
+## Methods and technologies
+
+- **Algorithm:** K-Means clustering
+- **Cluster evaluation:** Elbow Method and Silhouette Score
+- **Dimensionality reduction:** PCA
+- **Language:** Python
+- **Libraries:** Pandas, NumPy, Matplotlib, Seaborn, Scikit-learn
+
+## Exploratory findings
+
+The notebook selects four clusters based on the Elbow Method and Silhouette Score analysis and discusses them as broad behavioural profiles:
+
+1. Lower-spending / lower-utilization customers.
+2. Higher-spending / higher-frequency customers.
+3. Customers with comparatively higher cash-advance activity.
+4. Customers with intermediate spending and payment patterns.
+
+These descriptions are exploratory interpretations of the dataset, not validated business segments or individual credit-risk assessments. Cluster meaning depends on feature selection, preprocessing, and the dataset sample.
+
+## Run locally
+
+Clone the repository:
+
 ```bash
-git clone https://github.com/BerkayYLMZ5353/customer-segmentation-kmeans.git
-pip install pandas numpy matplotlib seaborn scikit-learn
-jupyter notebook K-Means_Odev.ipynb
+git clone https://github.com/BerkayYLMZ53/Customer-Segmentation.git
+cd Customer-Segmentation
 ```
+
+Install the dependencies:
+
+```bash
+pip install pandas numpy matplotlib seaborn scikit-learn jupyter
+```
+
+Launch Jupyter Notebook and open `K-Means_Odev.ipynb`.
+
